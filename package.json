@@ -1,5 +1,5 @@
 {
-  "name": "@sugar-vue2/clipboard",
+  "name": "@sugar/vue2-clipboard",
   "version": "1.0.0",
   "description": "A clipboard plugin for vue2",
   "main": "index.js",
