@@ -5,10 +5,6 @@ export const commonButton = () => {
   return commonButton._dom
 }
 
-export const isEmptyObject = (obj) => {
-  return !!Object.keys(obj).length
-}
-
 export const formatText = (text) => {
   if (typeof text === 'function') {
     text = text()
@@ -17,4 +13,14 @@ export const formatText = (text) => {
     text = text.toString()
   }
   return () => text
+}
+
+export const query = (el) => {
+  if (!el) return
+  if (typeof el === 'string') {
+    return document.querySelector(el)
+  }
+  if (typeof el === 'object' && el.nodeType === 1) {
+    return el
+  }
 }

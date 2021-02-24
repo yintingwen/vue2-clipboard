@@ -1,37 +1,48 @@
-import { isEmptyObject } from './utils'
-
-export const globalOptions = {}
+export const globalOptions = {
+  callHooks: true
+}
 
 /**
  * 合并选项
  * @param {*} options
  */
 export const mergeOptions = (options = {}) => {
-  if (isEmptyObject(options)) return
+  mergeHooks(options)
+  mergeCallHooks(options)
+}
 
-  const { success, error, callback } = options
+const mergeHooks = (options) => {
+  const { success, error } = options
 
-  if (success && typeof success !== 'function') {
-    options.success = null
+  if (success && typeof success === 'function') {
+    globalOptions.success = success
   }
 
-  if (error && typeof error !== 'function') {
-    options.fail = null
+  if (error && typeof error === 'function') {
+    globalOptions.error = console.error()
   }
+}
 
-  options.callback = Boolean(callback)
+/**
+ * 合并callHooks配置
+ * @param {*} options
+ */
+const mergeCallHooks = (options) => {
+  const { callHooks } = options
 
-  Object.assign(globalOptions, options)
+  if (typeof callHooks !== 'boolean') return
+
+  globalOptions.callHooks = callHooks
 }
 
 /**
  * 执行钩子
  * @param {*} hook 钩子名称
  */
-export const callHooks = (hook) => {
-  const { callback } = globalOptions
+export const callHook = (hook) => {
+  const { callHooks } = globalOptions
 
-  if (!callback) return
+  if (!callHooks) return
 
   const targetHook = globalOptions[hook]
 
