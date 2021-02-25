@@ -2,6 +2,8 @@ export const globalOptions = {
   callHooks: true
 }
 
+export const hooks = ['success', 'error']
+
 /**
  * 合并选项
  * @param {*} options
@@ -47,4 +49,12 @@ export const callHook = (hook) => {
   const targetHook = globalOptions[hook]
 
   targetHook && targetHook()
+}
+
+/**
+ * 判断是否是钩子
+ * @param {*} arg 指令参数
+ */
+export function isHook (arg) {
+  return hooks.includes(arg)
 }

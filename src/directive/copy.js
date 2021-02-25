@@ -1,14 +1,12 @@
 import Clipboard from 'clipboard'
-import { callHook } from '../options'
+import { callHook, isHook } from '../options'
 import { formatText } from '../utils'
 
 const bind = (el, binding) => {
   const { arg, value } = binding
 
-  if (arg === 'success') {
-    el._clipboard_success = value
-  } else if (arg === 'error') {
-    el._clipboard_error = value
+  if (isHook(arg)) {
+    el[`_clipboard_${arg}`] = value
   } else {
     const text = formatText(value)
 
@@ -35,10 +33,8 @@ const bind = (el, binding) => {
 const update = (el, binding) => {
   const { arg, value } = binding
 
-  if (arg === 'success') {
-    el._clipboard_success = value
-  } else if (arg === 'error') {
-    el._clipboard_error = value
+  if (isHook(arg)) {
+    el[`_clipboard_${arg}`] = value
   } else {
     el._clipboard.text = formatText(value)
   }
@@ -46,10 +42,8 @@ const update = (el, binding) => {
 
 const unbind = (el, binding) => {
   const { arg } = binding
-  if (arg === 'success') {
-    Reflect.defineProperty(el, '_clipboard_success')
-  } else if (arg === 'error') {
-    Reflect.defineProperty(el, '_clipboard_error')
+  if (isHook(arg)) {
+    Reflect.deleteProperty(el, `_clipboard_${arg}`)
   } else {
     el._clipboard.destroy()
     Reflect.defineProperty(el, '_clipboard')

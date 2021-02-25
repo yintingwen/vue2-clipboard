@@ -9,7 +9,7 @@
   </head>
   <body>
     <div id="app">
-      <el-button @click="visible = true">Button</el-button>
+      <el-button v-copy="'facai'" v-copy:success="dirSuccess" v-copy:error="dirError">Button</el-button>
       <el-button @click="showModal">Button2</el-button>
       <el-dialog :visible.sync="visible" title="Hello world">
         <p>Try Element</p>

@@ -1,3 +1,4 @@
+import Vue2Clipboard from '@ytw/vue2-clipboard'
 import plugins, { copyText } from '../lib/index'
 
 Vue.use(plugins, {
@@ -7,6 +8,10 @@ Vue.use(plugins, {
   error() {
     alert('失败')
   },
+})
+
+Vue.use(Vue2Clipboard, {
+  
 })
 
 new Vue({
@@ -24,5 +29,11 @@ new Vue({
         this.testFunc()
       } catch (error) {}
     },
+    dirSuccess() {
+      console.log('指令成功')
+    },
+    dirError() {
+      console.log('指令失败')
+    }
   },
 })
