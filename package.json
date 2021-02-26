@@ -1,6 +1,6 @@
 {
   "name": "@ytw/vue2-clipboard",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A clipboard plugin for vue2",
   "scripts": {
     "dev": "concurrently \"babel src -d lib -w\" \"webpack serve --config config/webpack.dev.js\"",
