@@ -40,7 +40,7 @@ copyText(text: string, options: {
   callHooks: boolean           // 控制本次操作是否调用全局钩子，默认true
 })
 
-// 在Vue中，通过 this.$copytext 使用
+// 在Vue中，通过 this.$copyText 使用
 ```
 ``` html
 <div class="container">
