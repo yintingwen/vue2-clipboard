@@ -10,7 +10,7 @@ export const formatText = (text) => {
     text = text()
   }
   if (typeof text !== 'string') {
-    text = text.toString()
+    text = String(text)
   }
   return () => text
 }

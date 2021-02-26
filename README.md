@@ -1,5 +1,5 @@
 # vue2-clipboard
-A clipboard plugin for vue2
+vue2的粘贴板插件，依赖clipboardjs
 
 ## install
 ---
@@ -21,9 +21,9 @@ Vue.use(Vue2Clipboard, globalOptions)
 
 ```js
 {
-  success: () => {}, // Callback on successful copy
-  error: () => {}, // Callback in case of copy failure
-  callHooks: true // Whether to execute global callback
+  success: () => {}, // 复制成功后执行的钩子
+  error: () => {}, // 复制失败后执行的钩子
+  callHooks: true // 是否在复制操作后执行对应的钩子
 }
 
 ```
@@ -32,20 +32,20 @@ Vue.use(Vue2Clipboard, globalOptions)
 ---
 
 ``` ts
-// Called as a method, returns a Promise
+// 函数方式调用，返回promise
 import { copyText } from '@ytw/vue2-clipboard'
 
 copyText(text: string, options: {
   container: Element | string,
-  callHooks: boolean           // Whether to execute a global hook，default true
+  callHooks: boolean           // 控制本次操作是否调用全局钩子，默认true
 })
 
-// In Vue, you can use this.$copytext directly
+// 在Vue中，通过 this.$copytext 使用
 ```
 ``` html
 <div class="container">
   <input type="text" v-model="message">
-  <!-- The directive's hooks override the global hooks -->
+  <!-- 指令的钩子会覆盖全局钩子 -->
   <button type="button"
     v-clipboard:copy="message"
     v-clipboard:success="onCopy"
@@ -57,7 +57,6 @@ copyText(text: string, options: {
 
 
 <script>
-// 
 new Vue({
   el: '#app',
   data: function () {
