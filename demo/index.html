@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <script src="../lib/index.js"></script>
     <title>Document</title>
-    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
   </head>
   <body>
+
     <div id="app">
       <el-button v-copy="'facai'" v-copy:success="dirSuccess" v-copy:error="dirError">Button</el-button>
       <el-button @click="showModal">Button2</el-button>
@@ -16,8 +17,5 @@
       </el-dialog>
     </div>
   </body>
-  <!-- import Vue before Element -->
-  <script src="https://unpkg.com/vue/dist/vue.js"></script>
-  <!-- import JavaScript -->
-  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
 </html>

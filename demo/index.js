@@ -1,6 +1,8 @@
-import Vue2Clipboard from '@ytw/vue2-clipboard'
 import plugins, { copyText } from '../lib/index'
+import Vue from 'vue/dist/'
+import ElementUI from 'element-ui'
 
+Vue.use(ElementUI)
 Vue.use(plugins, {
   success() {
     alert('成功')
@@ -9,12 +11,9 @@ Vue.use(plugins, {
     alert('失败')
   },
 })
+console.log(document.querySelector('#app').outerHTML)
 
-Vue.use(Vue2Clipboard, {
-  
-})
-
-new Vue({
+const v = new Vue({
   el: '#app',
   data: {
     visible: false,
@@ -36,4 +35,5 @@ new Vue({
       console.log('指令失败')
     }
   },
-})
+}).$mount()
+// console.log(v)
