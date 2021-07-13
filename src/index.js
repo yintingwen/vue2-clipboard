@@ -13,4 +13,8 @@ export {
   mergeOptions
 }
 
-export default { install }
+export default {
+  install,
+  copyText,
+  mergeOptions
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <div id="app">
+        <button v-copy="'哈哈哈哈哈'">指令</button>
+    </div>
+    <script src="../dist/vue2-clipboard.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+    console.log(Vue2Clipboard)
+    Vue.use(Vue2Clipboard, {
+      success() {
+        alert('成功')
+      },
+      error() {
+        alert('失败')
+      },
+    })
+
+    new Vue({
+      el: '#app',
+      data: {
+        visible: false,
+      },
+      methods: {
+        testFunc() {
+          copyText('我是函数式')
+        },
+        dirSuccess() {
+          console.log('指令成功')
+        },
+        dirError() {
+          console.log('指令失败')
+        }
+      },
+    })
+    </script>
+</body>
+</html>

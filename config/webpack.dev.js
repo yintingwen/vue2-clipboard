@@ -2,10 +2,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'development',
-  entry: '/demo/index.js',
+  entry: '/public/lib.js',
   plugins: [
     new HtmlWebpackPlugin({
-      template: './demo/index.html'
+      template: './public/lib.html'
     })
   ],
   devServer: {
