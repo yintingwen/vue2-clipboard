@@ -56,5 +56,6 @@ export const callHook = (hook) => {
  * @param {*} arg 指令参数
  */
 export function isHook (arg) {
+  console.log(hooks.includes)
   return hooks.includes(arg)
 }
