@@ -1,5 +1,6 @@
 import plugins, { copyText } from '../lib/index'
 import Vue from 'vue/dist/vue.min'
+
 Vue.use(plugins, {
   success() {
     alert('成功')
