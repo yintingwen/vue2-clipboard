@@ -4,7 +4,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import babel from '@rollup/plugin-babel'
 
 module.exports = {
-  input: './src/index.js',
+  input: './src/entry/umd.js',
   output: {
     file: './dist/vue2-clipboard.min.js',
     format: 'umd',

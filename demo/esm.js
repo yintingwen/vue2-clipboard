@@ -1,5 +1,7 @@
-import plugins, { copyText } from '../lib/index'
+import plugins, { copyText } from '../dist/vue2-clipboard.esm'
 import Vue from 'vue/dist/vue.min'
+
+console.log(copyText)
 
 Vue.use(plugins, {
   success() {
