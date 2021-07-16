@@ -3,11 +3,11 @@
   "version": "1.0.7",
   "description": "A clipboard plugin for vue2",
   "scripts": {
-    "dev-lib": "concurrently \"babel src -d lib -w\" \"webpack serve --config config/webpack.dev.js\"",
-    "dev-min": "concurrently \"babel src -d lib -w\" \"webpack --watch --config config/webpack.prod.js\"",
+    "dev-esm": "concurrently \\\\\\\\\\\\\\\"rollup -c config/rollup.esm.js -w\\\\\\\\\\\\\\\" \\\\\\\\\\\\\\\"webpack serve --config config/webpack.dev.js\\\\\\\\\\\\\\\"",
+    "dev-min": "rollup -w -c config/rollup.umd.js",
     "build": "npm run build-lib && npm run build-min",
-    "build-lib": "rollup -c config/rollup.lib.js",
-    "build-min": "rollup -c config/rollup.min.js"
+    "build-esm": "rollup -c config/rollup.esm.js",
+    "build-min": "rollup -c config/rollup.umd.js"
   },
   "repository": {
     "type": "git",

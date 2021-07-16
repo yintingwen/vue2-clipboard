@@ -14,7 +14,5 @@ export {
 }
 
 export default {
-  install,
-  copyText,
-  mergeOptions
+  install
 }

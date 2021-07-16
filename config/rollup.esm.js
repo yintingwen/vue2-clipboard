@@ -1,6 +1,5 @@
 import babel from '@rollup/plugin-babel'
 
-
 module.exports = {
   input: './src/index.js',
   output: {
@@ -10,7 +9,7 @@ module.exports = {
   },
   plugins: [
     babel({
-       babelHelpers: 'runtime' 
+       babelHelpers: 'runtime'
     })
   ]
 }

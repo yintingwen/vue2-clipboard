@@ -11,11 +11,16 @@ module.exports = {
     name: 'Vue2Clipboard',
   },
   plugins: [
-    resolve(),  
-    commonjs(), 
-    babel({ 
-      babelHelpers: 'runtime',
+    resolve(),
+    commonjs(),
+    babel({
+      exclude: 'node_modules/**',
+      babelHelpers: 'runtime'
     }),
-
+    terser({
+      format: {
+        comments: false
+      }
+    })
   ]
 }
