@@ -1,6 +1,6 @@
 {
   "name": "@ytw/vue2-clipboard",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "A clipboard plugin for vue2",
   "scripts": {
     "dev-esm": "concurrently \"rollup -c config/rollup.esm.js -w\" \"webpack serve --config config/webpack.dev.js\"",
