@@ -17,9 +17,9 @@ declare module 'vue/types/vue' {
 }
 
 declare class Vue2Clipboard {
-  static install(vue: typeof Vue, options: GlobalOptions): void
+  static install(vue: typeof Vue, options?: GlobalOptions): void
 }
 
-export const mergeOptions: (options: GlobalOptions) => void
+export const mergeOptions: (options?: GlobalOptions) => void
 export const copyText: CopyText
 export default Vue2Clipboard
