@@ -1,7 +1,7 @@
 import Vue from 'vue'
 
 interface CopyText {
-  (text: string, options: { container?: string | HTMLElement, callHooks?: boolean }): Promise<any>
+  (text: string, options?: { container?: string | HTMLElement, callHooks?: boolean }): Promise<any>
 }
 
 interface GlobalOptions {
