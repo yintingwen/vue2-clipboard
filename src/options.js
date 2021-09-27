@@ -21,7 +21,7 @@ const mergeHooks = (options) => {
   }
 
   if (error && typeof error === 'function') {
-    globalOptions.error = console.error()
+    globalOptions.error = error
   }
 }
 
@@ -42,9 +42,7 @@ const mergeCallHooks = (options) => {
  * @param {*} hook 钩子名称
  */
 export const callHook = (hook) => {
-  const { callHooks } = globalOptions
-
-  if (!callHooks) return
+  if (!globalOptions.callHooks) return
 
   const targetHook = globalOptions[hook]
 
@@ -56,5 +54,5 @@ export const callHook = (hook) => {
  * @param {*} arg 指令参数
  */
 export function isHook (arg) {
-  return hooks.includes(arg)
+  return hooks.indexOf(arg) !== -1
 }

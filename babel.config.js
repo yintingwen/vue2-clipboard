@@ -15,5 +15,6 @@ module.exports = {
         version: require('@babel/runtime-corejs3/package.json').version
       }
     ]
-  ]
+  ],
+  exclude: /node_modules/
 }

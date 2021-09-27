@@ -1,8 +1,6 @@
 import plugins, { copyText } from '../dist/vue2-clipboard.esm'
 import Vue from 'vue/dist/vue.min'
 
-console.log(copyText)
-
 Vue.use(plugins, {
   success() {
     alert('成功')
@@ -11,6 +9,15 @@ Vue.use(plugins, {
     alert('失败')
   },
 })
+
+const cButton = {
+  template: '<button @click="test">组件测试</button>',
+  methods: {
+    test () {
+      console.log('组件点击')
+    }
+  }
+}
 
 new Vue({
   el: '#app',
@@ -28,4 +35,7 @@ new Vue({
       console.log('指令失败')
     }
   },
+  components: {
+    cButton
+  }
 })

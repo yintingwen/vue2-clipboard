@@ -43,10 +43,10 @@ const update = (el, binding) => {
 const unbind = (el, binding) => {
   const { arg } = binding
   if (isHook(arg)) {
-    Reflect.deleteProperty(el, `_clipboard_${arg}`)
+    delete el[`_clipboard_${arg}`]
   } else {
     el._clipboard.destroy()
-    Reflect.defineProperty(el, '_clipboard')
+    delete el._clipboard
   }
 }
 
